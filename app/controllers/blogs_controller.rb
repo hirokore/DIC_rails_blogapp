@@ -1,6 +1,7 @@
 class BlogsController < ApplicationController
   def index
     @blogs = Blog.all
+    # binding.pry
   end
 
   def new
@@ -20,6 +21,9 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
   end
 
+  def edit
+  end
+  
   private
   def blog_params
     params.require(:blog).permit(:title,:content)
